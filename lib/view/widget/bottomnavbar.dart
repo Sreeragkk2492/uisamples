@@ -14,7 +14,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static  List<Widget> _widgetOptions = <Widget>[
     Homepage(),
     Text(
       'Index 1: Business',
@@ -28,7 +28,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       'Index 3: hah',
       style: optionStyle,
     ),
-     Text(
+     const Text(
       'Index 3: hah',
       style: optionStyle,
     ),

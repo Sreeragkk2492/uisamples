@@ -1,11 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uisamples/view/utils/appcolors.dart';
+import 'package:uisamples/view/widget/caorusel.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -182,9 +182,35 @@ class Homepage extends StatelessWidget {
                     ))
               ],
             ),
+          ),
+          SliverToBoxAdapter(
+            // child: CarouselSlider.builder(
+            //     itemCount: carouselimages.length,
+            //     itemBuilder: (BuildContext context, int index, realindex) =>
+            //         Container(
+            //           decoration: BoxDecoration(
+            //               image: DecorationImage(
+            //                   image:
+            //                       AssetImage(carouselimages[index].toString()),
+            //                   fit: BoxFit.cover)),
+            //         ),
+            //     options: CarouselOptions(
+            //       pageSnapping: true,
+            //       aspectRatio: 16 / 9,
+            //       viewportFraction: 1,
+            //       enableInfiniteScroll: true,
+            //       autoPlay: true,
+            //     )),
+            child: Carousel(), 
           )
         ],
       ),
     );
   }
+
+  // List<Image> carouselimages = [
+  //   Image.asset('assets/home/lbag1.jpg'),
+  //   Image.asset('assets/home/lbag2.jpg'),
+  //   Image.asset('assets/home/lbag3.jpg')
+  // ];
 }
