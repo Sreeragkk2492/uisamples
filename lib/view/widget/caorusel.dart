@@ -1,9 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uisamples/mode/bags.dart';
 import 'package:uisamples/view/detailspage.dart';
-import 'package:uisamples/view/utils/appcolors.dart';
 
 class Carousel extends StatelessWidget {
   Carousel({super.key});
@@ -14,7 +12,6 @@ class Carousel extends StatelessWidget {
         title: 'Leather Bag',
         discription: 'Classic eleganace: your everyday companion',
         bgcolor: Color.fromARGB(255, 83, 204, 235)),
-        
     Bags(
         imageurl: 'assets/home/lbag2.jpg',
         title: 'Leather Bag',
@@ -38,10 +35,17 @@ class Carousel extends StatelessWidget {
               itemBuilder: (context, int index, int i) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detailspage(item: Bags(imageurl: items[index].imageurl, title: items[index].title, discription: items[index].discription,bgcolor: items[index].bgcolor))));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Detailspage(
+                            item: Bags(
+                                imageurl: items[index].imageurl,
+                                title: items[index].title,
+                                discription: items[index].discription,
+                                bgcolor: items[index].bgcolor))));
                   },
                   child: Container(
-                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    // height: 200,
                     // width: ,
                     decoration: BoxDecoration(
                         image: DecorationImage(
@@ -52,6 +56,7 @@ class Carousel extends StatelessWidget {
                 );
               },
               options: CarouselOptions(
+                  height: 250,
                   pageSnapping: true,
                   aspectRatio: 16 / 9,
                   viewportFraction: 0.6,

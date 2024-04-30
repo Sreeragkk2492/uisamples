@@ -71,14 +71,7 @@ class Detailspage extends StatelessWidget {
                   ),
                 ),
               )),
-          // Positioned(
-          // top: 200,
-          // right: -130,
-          // child: Container(
-          //   height: 400,
-          //   width: 400,
-          //   decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/home/lbag2.jpg'))),
-          // )),
+       
           Positioned(
             top: 260,
             left: 30,
@@ -113,9 +106,7 @@ class Detailspage extends StatelessWidget {
             child: Container(
               width: 50,
               height: 50,
-              // margin: EdgeInsets.only(
-              //   left: 20,
-              // ),
+              
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(50)),

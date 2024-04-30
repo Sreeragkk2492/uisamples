@@ -14,13 +14,13 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     Homepage(),
-    Text(
+    const Text(
       'Index 1: Business',
       style: optionStyle,
     ),
-    Text(
+  const  Text(
       'Index 2: School',
       style: optionStyle,
     ),
