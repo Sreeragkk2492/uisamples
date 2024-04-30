@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,69 +7,63 @@ import 'package:uisamples/view/widget/caorusel.dart';
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Appcolor.bottombarcolor,
-      //  appBar: AppBar(),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Appcolor.bottombarcolor,
-            expandedHeight: 80,
-            leading: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-                child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      FontAwesomeIcons.bars,
-                      size: 16,
-                      color: Appcolor.iconcolor,
-                    )),
-              ),
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          leadingWidth: 73,
+          backgroundColor: Appcolor.bottombarcolor,
+          expandedHeight: 80,
+          leading: Container(
+            margin: EdgeInsets.only(left: 20),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(30)),
+            child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  FontAwesomeIcons.bars,
+                  size: 16,
+                  color: Appcolor.iconcolor,
+                )),
+          ),
+          title: Text(
+            'HOME',
+            style: TextStyle(
+                color: Color.fromARGB(255, 1, 57, 105),
+                fontSize: 23,
+                fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          actions: [
+            Container(
+              margin: EdgeInsets.only(right: 10),
+              height: 80,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(40)),
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    FontAwesomeIcons.bell,
+                    size: 16,
+                    color: Appcolor.iconcolor,
+                  )),
             ),
-            title: Text(
-              'HOME',
-              style: TextStyle(
-                  color: Color.fromARGB(255, 1, 57, 105),
-                  fontSize: 23,
-                  fontWeight: FontWeight.bold),
-            ),
-            centerTitle: true,
-            actions: [
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-                child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      FontAwesomeIcons.bell,
-                      size: 16,
-                      color: Appcolor.iconcolor,
-                    )),
-              ),
-              SizedBox(
-                width: 10,
-              )
-            ],
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(80),
-              child: Padding(
-                padding: const EdgeInsets.all(08.0),
-                child: ListTile(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  tileColor: Appcolor.bottombarcolor,
-                  leading: Container(
-                    height: 40,
-                    width: 40,
+            SizedBox(
+              width: 10,
+            )
+          ],
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(80),
+            child: ListTile(
+              minLeadingWidth: 60.0,
+              tileColor: Appcolor.bottombarcolor,
+              leading: Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    margin: EdgeInsets.only(left: 4),
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/home/t1.jpg'),
@@ -85,36 +78,40 @@ class Homepage extends StatelessWidget {
                     //       color: Appcolor.iconcolor,
                     //     )),
                   ),
-                  title: Text(
-                    'Hello Sreerag',
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Appcolor.primarytextcolor),
-                  ),
-                  subtitle: Text('View profile'),
-                  trailing: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        FontAwesomeIcons.arrowRight,
-                        color: Appcolor.secondaryiconcolor,
-                      )),
                 ),
               ),
+              title: Text(
+                'Hello Sreerag',
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Appcolor.primarytextcolor),
+              ),
+              subtitle: Text('View profile'),
+              trailing: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    FontAwesomeIcons.arrowRight,
+                    color: Appcolor.secondaryiconcolor,
+                  )),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Stack(children: [
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                          image: AssetImage('assets/home/Ads1.png'),
-                          fit: BoxFit.cover)),
+        ),
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              Stack(children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: AssetImage('assets/home/Ads1.png',),
+                            fit: BoxFit.cover)),
+                  ),
                 ),
                 Positioned(
                     left: 30,
@@ -161,50 +158,31 @@ class Homepage extends StatelessWidget {
                           )),
                         )))
               ]),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'New Arrivals',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      
+                      'New Arrivals',
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      FontAwesomeIcons.ellipsisVertical,
-                      color: Appcolor.unselectediconcolor,
-                    ))
-              ],
-            ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        FontAwesomeIcons.ellipsisVertical,
+                        color: Appcolor.unselectediconcolor,
+                      ))
+                ],
+              ),
+            Carousel() 
+            ],
           ),
-          SliverToBoxAdapter(
-            // child: CarouselSlider.builder(
-            //     itemCount: carouselimages.length,
-            //     itemBuilder: (BuildContext context, int index, realindex) =>
-            //         Container(
-            //           decoration: BoxDecoration(
-            //               image: DecorationImage(
-            //                   image:
-            //                       AssetImage(carouselimages[index].toString()),
-            //                   fit: BoxFit.cover)),
-            //         ),
-            //     options: CarouselOptions(
-            //       pageSnapping: true,
-            //       aspectRatio: 16 / 9,
-            //       viewportFraction: 1,
-            //       enableInfiniteScroll: true,
-            //       autoPlay: true,
-            //     )),
-            child: Carousel(), 
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 
